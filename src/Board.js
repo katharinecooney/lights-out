@@ -47,9 +47,10 @@ class Board extends Component {
     for(let y = 0; y < this.props.nRows; y++) {
       let row = [];
       for(let x = 0; x < this.props.nCols; x++){
-        row.push(<Cell isLit={this.state.board[y][x]}/>)
+        let coord = `${y}-${x}`
+        row.push(<Cell key={coord} isLit={this.state.board[y][x]}/>)
       }
-      tableBoard.push(<tr>{row}</tr>)
+      tableBoard.push(<tr key={y}>{row}</tr>)
     }
     return (
       <table className="Board">
