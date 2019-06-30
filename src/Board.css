@@ -1,5 +1,6 @@
 .Board {
   margin: 0 auto;
+  box-shadow: 
 }
 
 html,
@@ -23,11 +24,16 @@ body {
   vertical-align: middle;
 }
 
-.Board-title {
+.Board-title, 
+.Board-win-message {
   padding: 30px 0 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Board-win-message div {
+  font-size: 9rem;
 }
 
 .neon-orange {
@@ -35,6 +41,9 @@ body {
   color: #FB4264;
   font-size: 80px;
   text-shadow: 0 0 3vw #F40A35;
+  animation: neon-orange 1s ease infinite;
+  -moz-animation: neon-orange 1s ease infinite;
+  -webkit-animation: neon-orange 1s ease infinite;
 }
 
 .neon-blue {
@@ -42,12 +51,10 @@ body {
   color: #426DFB;
   font-size: 80px;
   text-shadow: 0 0 3vw #2356FF;
-}
-
-.neon-orange {
-  animation: neon-orange 1s ease infinite;
-  -moz-animation: neon-orange 1s ease infinite;
-  -webkit-animation: neon-orange 1s ease infinite;
+  animation: neon-blue 2s linear infinite;
+  -moz-animation: neon-blue 2s linear infinite;
+  -webkit-animation: neon-blue 2s linear infinite;
+  -o-animation: neon-blue 2s linear infinite;
 }
 
 @keyframes neon-orange {
@@ -62,13 +69,6 @@ body {
   }
 }
 
-.neon-blue {
-  animation: neon-blue 2s linear infinite;
-  -moz-animation: neon-blue 2s linear infinite;
-  -webkit-animation: neon-blue 2s linear infinite;
-  -o-animation: neon-blue 2s linear infinite;
-}
-
 @keyframes neon-blue {
   0%,
   100% {
@@ -80,3 +80,6 @@ body {
     color: #146C80;
   }
 }
+
+
+

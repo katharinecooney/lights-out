@@ -53,7 +53,10 @@ class Board extends Component {
 
   render () {
     if(this.state.hasWon){
-      return <h1>YOU WON!</h1>
+      return <div className="Board-win-message">
+      <div className="neon-orange">YOU</div>
+      <div className="neon-blue">WIN!</div>
+    </div>
     }
     let tableBoard = [];
     for(let y = 0; y < this.props.nRows; y++) {
