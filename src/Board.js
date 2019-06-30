@@ -41,6 +41,10 @@ class Board extends Component {
     }
 
     flipCell(y, x);
+    flipCell(y-1, x);
+    flipCell(y+1, x);
+    flipCell(y, x-1);
+    flipCell(y, x+1);
 
     let hasWon = false;
 
