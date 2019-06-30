@@ -30,16 +30,21 @@ class Board extends Component {
   }
 
   flipCellsAround (coord) {
-    let { ncols, nrows } = this.props;
+    let { nCols, nRows } = this.props;
     let board = this.state.board;
     let [y, x] = coord.split('-').map(Number);
 
     function flipCell (y, x) {
-      if (x >= 0 && x < ncols && y >= 0 && y < nrows) {
+      if (x >= 0 && x < nCols && y >= 0 && y < nRows) {
         board[y][x] = !board[y][x];
       }
     }
-    this.setState({ board, hasWon: false });
+
+    flipCell(y, x);
+
+    let hasWon = false;
+
+    this.setState({ board: board, hasWon: hasWon });
   }
 
   render () {
@@ -48,7 +53,11 @@ class Board extends Component {
       let row = [];
       for(let x = 0; x < this.props.nCols; x++){
         let coord = `${y}-${x}`
-        row.push(<Cell key={coord} isLit={this.state.board[y][x]}/>)
+        row.push(<Cell
+          key={coord} 
+          isLit={this.state.board[y][x]} 
+          flipCellsAroundMe={() => this.flipCellsAround(coord)}
+          />)
       }
       tableBoard.push(<tr key={y}>{row}</tr>)
     }
